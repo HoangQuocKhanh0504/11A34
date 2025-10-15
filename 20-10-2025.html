@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Người phụ nữ Việt Nam tôi yêu – 11A34</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px; /* bo tròn tất cả */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #fff9fc, #fff);
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(255, 105, 180, 0.15);
+  backdrop-filter: blur(15px);
+  transition: background 0.3s ease;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+nav:hover { background: rgba(255,255,255,0.95); }
+nav .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  height: 50px;
+  max-height: 8vw;
+  transition: transform 0.3s ease;
+}
+.logo-img:hover { transform: scale(1.05); }
+.flag-icon {
+  width: 30px;
+  height: auto;
+  max-width: 5vw;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.flag-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.navbar-brand span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+/* HERO */
+.hero {
+  height: 100vh; /* full màn hình */
+  background: url('backgroud.png') center center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.45), rgba(214,51,132,0.25));
+  backdrop-filter: brightness(0.9);
+  z-index: 1;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), transparent 60%),
+              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.15), transparent 60%);
+  z-index: 2;
+  pointer-events: none;
+  animation: shimmer 15s infinite alternate ease-in-out;
+}
+@keyframes shimmer { from{opacity:0.4;} to{opacity:0.7;} }
+
+.hero h1, .hero p {
+  position: relative;
+  z-index: 3;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  animation: fadeUp 1.2s ease;
+}
+.hero p {
+  font-size: 1.25rem;
+  max-width: 90%;
+  margin-top: 10px;
+  color: #f3f3f3;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  animation: fadeUp 1.8s ease;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+
+/* SECTION */
+section {
+  padding: 8vw 4%;
+  max-width: 1200px;
+  margin: auto;
+}
+.alt { background: linear-gradient(to right, #fff0f7, #ffe5f1); }
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+}
+.section-content img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(214,51,132,0.2);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.section-content img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(214,51,132,0.3);
+}
+.section-text {
+  flex: 1;
+  min-width: 280px;
+}
+h2 {
+  color: #d63384;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  border-left: 5px solid #ff80ab;
+  padding-left: 14px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 14px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg,#ff80ab,#d63384);
+  border-radius: 10px;
+}
+p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(to right, #ffe0ec, #fff0f6);
+  text-align: center;
+  padding: 15px 20px; /* giảm padding top/bottom */
+  font-size: 1rem;
+  color: #444;
+  border-top: 3px solid #ffb6c1;
+  letter-spacing: 0.3px;
+}
+
+/* Nếu muốn thêm khoảng cách cho nội dung cuối trang */
+section:last-of-type {
+  margin-bottom: 10px; /* hoặc 20px tùy nhìn */
+}
+
+
+/* FADE ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .section-content { flex-direction: column; gap: 6vw; }
+  .section-content img { width: 80%; }
+}
+@media (max-width: 768px) {
+  .navbar-brand span { font-size: 1rem; }
+  .logo-img { height: 40px; }
+  .flag-icon { width: 25px; }
+  .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+  .navbar-brand span { font-size: 0.9rem; }
+  .logo-img { height: 35px; }
+  .flag-icon { width: 20px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  .section-content img { width: 90%; }
+}
+
+  </style>
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#fff; position:relative;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="logo.png" alt="Logo 11A34" class="logo-img">
+      <span class="ms-2 fw-bold text-dark">Lớp 11A34</span>
+      <!-- Icon lá cờ -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" 
+           alt="Cờ Việt Nam" class="flag-icon ms-2">
+    </a>
+
+    <!-- Notification nhỏ gọn -->
+    <div id="navbar-notification" class="d-none d-lg-flex align-items-center ms-auto">
+      <div id="scrolling-wrapper">
+        <span>
+          👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
+        </span>
+        <span>
+          👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
+        </span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+/* Notification nhỏ gọn trong navbar */
+#navbar-notification {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.75rem; /* nhỏ gọn */
+  height: 28px;
+  line-height: 28px;
+  border-radius: 14px; /* bo tròn */
+  padding: 0 10px;
+  overflow: hidden;
+  max-width: 350px;  /* vừa trong navbar */
+}
+
+#scrolling-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-infinite 20s linear infinite;
+}
+
+#scrolling-wrapper span {
+  padding-right: 50px;
+}
+
+@keyframes scroll-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+#navbar-notification a {
+  color: #000;
+  text-decoration: underline;
+}
+
+</style>
+
+
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Người phụ nữ Việt Nam tôi yêu</h1>
+    <p>Tôn vinh vẻ đẹp, lòng nhân hậu và bản lĩnh của người phụ nữ Việt Nam.</p>
+    <p style="font-size:1rem; margin-top:10px;">Thực hiện bởi tập thể lớp 11A34 – Trung tâm GDNN-GDTX Quận 12</p>
+  </div>
+
+ <!-- Section 1 -->
+<section id="gioithieu">
+  <div class="container">
+    <div class="section-content fade-in">
+      <div class="section-text">
+        <h2>Giới thiệu chủ đề</h2>
+        <p>Nhân dịp kỷ niệm 20/10, tập thể lớp 11A34 mang đến dự án nhỏ mang tên <b>“Người phụ nữ Việt Nam tôi yêu”</b> — một không gian trực tuyến để gửi lời tri ân và tôn vinh vẻ đẹp của những người phụ nữ Việt Nam trong thời đại mới.</p>
+      </div>
+      <img src="phunu.png" alt="Phụ nữ Việt Nam">
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section class="alt" id="ynghia">
+  <div class="container">
+    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+      <div class="section-text">
+        <h2>Biểu tượng của yêu thương và kiên cường</h2>
+        <p>Phụ nữ Việt Nam là hình ảnh của lòng hi sinh, sự dịu dàng nhưng kiên cường. Họ vừa là người mẹ, người vợ, người cô giáo — vừa là người tiên phong trong học tập, lao động và sáng tạo.</p>
+      </div>
+      <img src="phunukiencuong.png" alt="Phụ nữ kiên cường">
+    </div>
+  </div>
+</section>
+
+<!-- Section 3 – Lịch sử ngày 20/10 -->
+<section id="lichsu">
+  <div class="container">
+    <div class="section-content fade-in">
+      <div class="section-text">
+        <h2>Lịch sử và ý nghĩa ngày 20/10</h2>
+        <p>Ngày 20/10 được chọn là Ngày Phụ nữ Việt Nam nhằm tôn vinh những đóng góp của phụ nữ trong mọi lĩnh vực. Đây là dịp để cả xã hội bày tỏ lòng biết ơn, trân trọng những người phụ nữ xung quanh, đồng thời nhắc nhở mọi người về vai trò quan trọng của họ trong gia đình và cộng đồng.</p>
+      </div>
+      <img src="20-10.png" alt="Ngày 20/10">
+    </div>
+  </div>
+</section>
+
+<!-- Section 4 – Hoạt động kỷ niệm -->
+<section class="alt" id="hoatdong">
+  <div class="container">
+    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+      <div class="section-text">
+        <h2>Hoạt động kỷ niệm 20/10</h2>
+        <ul>
+          <li>Tặng hoa và thiệp chúc mừng đến mẹ, cô giáo và bạn nữ.</li>
+          <li>Tổ chức văn nghệ, hội thi, hoặc dự án chia sẻ cảm xúc.</li>
+          <li>Tạo không gian trực tuyến để học sinh gửi lời tri ân và kỷ niệm.</li>
+        </ul>
+      </div>
+      <img src="hoatdong20-10.png" alt="Hoạt động 20/10">
+    </div>
+  </div>
+</section>
+
+<!-- Section 5 – Câu chuyện phụ nữ tiêu biểu -->
+<section id="cauchuyen">
+  <div class="container">
+    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+      <div class="section-text">
+        <h2>Câu chuyện phụ nữ tiêu biểu</h2>
+        <p>Nhấn vào biểu tượng kính lúp hoặc ảnh để đọc câu chuyện chi tiết.</p>
+      </div>
+      <div style="display:inline-block; position: relative; cursor: pointer;">
+        <img id="storyImg" src="vothisau.png" alt="Câu chuyện phụ nữ" style="width:500px; max-width:90%; border-radius:10px;">
+        <!-- Kính lúp -->
+        <span id="zoomBtn" style="
+          position:absolute; bottom:15px; right:15px;
+          background: linear-gradient(45deg, #ff7b7b, #ff3d3d);
+          color:#fff; padding:12px; border-radius:50%;
+          font-size:24px; cursor:pointer;
+          box-shadow:0 4px 12px rgba(0,0,0,0.5);
+          display:flex; align-items:center; justify-content:center;
+          border-radius: 50%;
+        ">🔍</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal câu chuyện -->
+<div id="storyModal" class="modal">
+  <div class="modal-content center-modal">
+    <!-- X tròn, toàn vùng bấm -->
+    <div class="close"><span style="pointer-events:none;">&times;</span></div>
+
+    <h2>Câu chuyện phụ nữ tiêu biểu</h2>
+    <!-- Chú thích -->
+    <p style="font-size:14px; color:#666; margin-top:-5px; margin-bottom:15px;">
+      Nhấn vào biểu tượng kính lúp để đọc câu chuyện chi tiết
+    </p>
+
+    <p style="font-size:18px; line-height:1.6;">
+      Chúng em muốn chia sẻ những câu chuyện nhỏ nhưng đầy cảm hứng: từ mẹ luôn hi sinh âm thầm, cô giáo tận tâm truyền đạt kiến thức, đến những bạn nữ trong lớp năng động, sáng tạo. Mỗi câu chuyện đều thể hiện lòng kiên cường, yêu thương và tinh thần vượt khó.
+    </p>
+    <div style="position: relative; display:inline-block;">
+      <img id="modalImg" src="vothisau.png" alt="Câu chuyện phụ nữ" style="width:100%; max-width:500px; margin-top:10px; border-radius:10px; cursor:pointer;">
+      <span id="fullZoomBtn" style="
+        position:absolute; bottom:10px; right:10px;
+        background: linear-gradient(45deg, #ff7b7b, #ff3d3d);
+        color:#fff; padding:10px; border-radius:50%;
+        font-size:22px; cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.5);
+        display:flex; align-items:center; justify-content:center;
+        transition:all 0.3s;
+        border-radius: 50%;
+      ">🔍</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal full ảnh -->
+<div id="fullImgModal" class="modal">
+  <div class="closeFull"><span style="pointer-events:none;">&times;</span></div>
+  <img class="full-img" id="fullImage">
+  <!-- Nút zoom ± -->
+  <div id="zoomControls" style="position:absolute; bottom:30px; display:flex; gap:15px; justify-content:center; width:100%;">
+    <button id="zoomOut" style="
+      padding:15px; font-size:28px; border:none; border-radius:50%;
+      cursor:pointer; background:linear-gradient(45deg,#ff7b7b,#ff3d3d);
+      color:#fff; box-shadow:0 3px 10px rgba(0,0,0,0.4);
+      display:flex; align-items:center; justify-content:center;
+      transition: all 0.2s;
+    ">➖</button>
+    <button id="zoomIn" style="
+      padding:15px; font-size:28px; border:none; border-radius:50%;
+      cursor:pointer; background:linear-gradient(45deg,#ff7b7b,#ff3d3d);
+      color:#fff; box-shadow:0 3px 10px rgba(0,0,0,0.4);
+      display:flex; align-items:center; justify-content:center;
+      transition: all 0.2s;
+    ">➕</button>
+  </div>
+</div>
+
+<style>
+.modal {
+  display: none;
+  position: fixed; z-index: 1000; left:0; top:0;
+  width:100%; height:100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content:center; align-items:center;
+}
+.center-modal {
+  background:#fff; padding:30px; border-radius:15px;
+  width:90%; max-width:800px; position:relative;
+  text-align:center; box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+.close, .closeFull {
+  position:absolute; top:12px; right:12px;
+  width:50px; height:50px; 
+  background:linear-gradient(45deg,#ff7b7b,#ff3d3d);
+  color:#fff; border-radius:50%; 
+  font-size:40px; font-weight:bold;
+  display:flex; justify-content:center; align-items:center;
+  cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,0.5);
+  transition:0.2s;
+  user-select: none; /* tránh bị bôi đen chữ */
+}
+.close span, .closeFull span {
+  pointer-events: none; /* click xuyên qua span */
+}
+
+.close:hover, .closeFull:hover { transform:scale(1.2); background:linear-gradient(45deg,#ff3d3d,#ff0000); }
+#fullImgModal .full-img { max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.7); transition: transform 0.2s ease; }
+
+</style>
+
+<script>
+// Modal câu chuyện
+const storyModal = document.getElementById("storyModal");
+const storyImg = document.getElementById("storyImg");
+const zoomBtn = document.getElementById("zoomBtn");
+const closeStory = document.querySelector("#storyModal .close");
+
+// Mở modal khi click ảnh hoặc kính lúp
+storyImg.onclick = zoomBtn.onclick = () => { storyModal.style.display = "flex"; }
+
+// Đóng modal khi click X (toàn vùng)
+closeStory.onclick = () => { storyModal.style.display = "none"; }
+// Stop event bubbling để click span × bên trong không ảnh hưởng
+closeStory.querySelector("span").style.pointerEvents = "none";
+
+// Click ngoài modal vẫn tắt modal
+storyModal.addEventListener("click", e => {
+  if(e.target === storyModal) storyModal.style.display = "none";
+});
+
+// Full ảnh
+const modalImg = document.getElementById("modalImg");
+const fullZoomBtn = document.getElementById("fullZoomBtn");
+const fullImgModal = document.getElementById("fullImgModal");
+const fullImage = document.getElementById("fullImage");
+const closeFull = document.querySelector("#fullImgModal .closeFull");
+let currentScale = 1;
+function updateScale(){ fullImage.style.transform = `scale(${currentScale})`; }
+
+// Mở full ảnh
+modalImg.onclick = fullZoomBtn.onclick = () => {
+  currentScale = 1;
+  fullImage.src = modalImg.src;
+  fullImgModal.style.display = "flex";
+  updateScale();
+}
+
+// Đóng full modal khi click X (toàn vùng)
+closeFull.onclick = () => { fullImgModal.style.display = "none"; }
+// Stop event bubbling để click span × bên trong không ảnh hưởng
+closeFull.querySelector("span").style.pointerEvents = "none";
+
+// Click ngoài full modal vẫn tắt
+fullImgModal.addEventListener("click", e => {
+  if(e.target === fullImgModal) fullImgModal.style.display = "none";
+});
+
+// Zoom ± giữ liên tục
+let zoomInterval;
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+
+// Ngăn click ± đóng modal
+[zoomIn, zoomOut].forEach(btn => btn.addEventListener("mousedown", e => e.stopPropagation()));
+
+function startZoomIn() {
+  zoomInterval = setInterval(() => {
+    currentScale += 0.05;
+    if (currentScale > 3) currentScale = 3;
+    updateScale();
+  }, 50);
+}
+function startZoomOut() {
+  zoomInterval = setInterval(() => {
+    currentScale -= 0.05;
+    if (currentScale < 0.3) currentScale = 0.3;
+    updateScale();
+  }, 50);
+}
+function stopZoom() {
+  clearInterval(zoomInterval);
+}
+
+// PC + Mobile đều nhận
+["mousedown", "touchstart"].forEach(evt => {
+  zoomIn.addEventListener(evt, e => { e.stopPropagation(); startZoomIn(); });
+  zoomOut.addEventListener(evt, e => { e.stopPropagation(); startZoomOut(); });
+});
+["mouseup", "mouseleave", "touchend", "touchcancel"].forEach(evt => {
+  zoomIn.addEventListener(evt, stopZoom);
+  zoomOut.addEventListener(evt, stopZoom);
+});
+
+
+</script>
+
+
+<!-- Section 6 – Phẩm chất của phụ nữ Việt Nam -->
+<section class="alt" id="phamchat">
+  <div class="container">
+    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+      <div class="section-text">
+        <h2>Phẩm chất của phụ nữ Việt Nam</h2>
+        <ul>
+          <li>Kiên cường trước thử thách</li>
+          <li>Dịu dàng và giàu tình cảm</li>
+          <li>Sáng tạo và năng động</li>
+          <li>Hi sinh vì gia đình và cộng đồng</li>
+        </ul>
+      </div>
+      <img src="phamchatphunuvietnam.png" alt="Phẩm chất phụ nữ">
+    </div>
+  </div>
+</section>
+
+<!-- Section 7 – Tri ân từ 11A34 -->
+<section id="trian">
+  <div class="container">
+    <div class="section-content fade-in">
+      <div class="section-text">
+        <h2>Tri ân và cảm xúc từ 11A34</h2>
+        <p>Chúng em gửi lời cảm ơn sâu sắc đến mẹ, cô giáo và các bạn nữ – những người đã tô đẹp cuộc sống. Ngày 20/10 không chỉ là ngày tri ân, mà còn là dịp để mỗi người nhắc nhớ giá trị yêu thương và tôn trọng.</p>
+      </div>
+      <img src="https://i.imgur.com/ygeOixC.jpg" alt="Tri ân 20/10">
+    </div>
+  </div>
+</section>
+
+<!-- Section 8 – Lời kết -->
+<section class="alt" id="ketluan">
+  <div class="container">
+    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+      <div class="section-text">
+        <h2>Lời kết</h2>
+        <p><i>“Người phụ nữ Việt Nam – dịu dàng như hoa, mạnh mẽ như thép.”</i></p>
+        <p>Tập thể lớp 11A34 tự hào được gửi đến các cô, mẹ, chị, bạn nữ lời chúc tốt đẹp nhất – chúc mọi người luôn mạnh khỏe, hạnh phúc và rạng rỡ như những cánh hoa mùa xuân.</p>
+      </div>
+      <img src="https://i.imgur.com/qbAUsnW.jpg" alt="Hoa yêu thương">
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 Lớp 11A34 – <a href="https://gdtxq12.hcm.edu.vn/" target="_blank">Trung tâm GDNN-GDTX Quận 12</a> | Thiết kế & thực hiện bởi <a href="https://www.facebook.com/khanhpc548" target="_blank" >Hoàng Quốc Khánh</a></p>
+  </footer>
+
+  <script>
+    // Hiệu ứng xuất hiện khi cuộn
+    const fadeEls = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+      });
+    });
+  </script>
+</body>
+</html>
