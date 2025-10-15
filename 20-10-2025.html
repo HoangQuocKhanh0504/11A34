@@ -16,13 +16,11 @@
   padding: 0;
   border-radius: 12px; /* bo tròn tất cả */
 }
-
 body {
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(to bottom, #fff9fc, #fff);
   color: #333;
 }
-
 /* NAVBAR */
 nav {
   background: rgba(255, 255, 255, 0.9);
@@ -61,7 +59,6 @@ nav .navbar-brand {
   font-weight: 700;
   margin-left: 0.5rem;
 }
-
 /* HERO */
 .hero {
   height: 100vh; /* full màn hình */
@@ -75,7 +72,6 @@ nav .navbar-brand {
   overflow: hidden;
   color: #fff;
 }
-
 .hero::after {
   content: "";
   position: absolute;
@@ -95,7 +91,6 @@ nav .navbar-brand {
   animation: shimmer 15s infinite alternate ease-in-out;
 }
 @keyframes shimmer { from{opacity:0.4;} to{opacity:0.7;} }
-
 .hero h1, .hero p {
   position: relative;
   z-index: 3;
@@ -117,7 +112,6 @@ nav .navbar-brand {
   animation: fadeUp 1.8s ease;
 }
 @keyframes fadeUp { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
-
 /* SECTION */
 section {
   padding: 8vw 4%;
@@ -171,7 +165,6 @@ p {
   line-height: 1.75;
   color: #444;
 }
-
 /* FOOTER */
 footer {
   background: linear-gradient(to right, #ffe0ec, #fff0f6);
@@ -182,13 +175,10 @@ footer {
   border-top: 3px solid #ffb6c1;
   letter-spacing: 0.3px;
 }
-
 /* Nếu muốn thêm khoảng cách cho nội dung cuối trang */
 section:last-of-type {
   margin-bottom: 10px; /* hoặc 20px tùy nhìn */
 }
-
-
 /* FADE ANIMATION */
 .fade-in {
   opacity: 0;
@@ -199,7 +189,6 @@ section:last-of-type {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .section-content { flex-direction: column; gap: 6vw; }
@@ -220,12 +209,9 @@ section:last-of-type {
   .hero p { font-size: 1rem; }
   .section-content img { width: 90%; }
 }
-
   </style>
-  
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#fff; position:relative;">
   <div class="container">
@@ -236,7 +222,6 @@ section:last-of-type {
       <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" 
            alt="Cờ Việt Nam" class="flag-icon ms-2">
     </a>
-
     <!-- Notification nhỏ gọn -->
     <div id="navbar-notification" class="d-none d-lg-flex align-items-center ms-auto">
       <div id="scrolling-wrapper">
@@ -250,7 +235,6 @@ section:last-of-type {
     </div>
   </div>
 </nav>
-
 <style>
 /* Notification nhỏ gọn trong navbar */
 #navbar-notification {
@@ -265,39 +249,42 @@ section:last-of-type {
   overflow: hidden;
   max-width: 350px;  /* vừa trong navbar */
 }
-
 #scrolling-wrapper {
   display: inline-block;
   white-space: nowrap;
   will-change: transform;
   animation: scroll-infinite 20s linear infinite;
 }
-
 #scrolling-wrapper span {
   padding-right: 50px;
 }
-
 @keyframes scroll-infinite {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 #navbar-notification a {
   color: #000;
   text-decoration: underline;
 }
-
+/* Ép navbar luôn dính trên đầu dù có position:relative */
+.navbar.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+/* Chừa khoảng trống để nội dung bên dưới không bị che */
+body {
+  padding-top: 80px; /* chỉnh cao thấp tùy chiều cao navbar */
+}
 </style>
-
-
-
   <!-- Hero -->
   <div class="hero">
     <h1>Người phụ nữ Việt Nam tôi yêu</h1>
     <p>Tôn vinh vẻ đẹp, lòng nhân hậu và bản lĩnh của người phụ nữ Việt Nam.</p>
     <p style="font-size:1rem; margin-top:10px;">Thực hiện bởi tập thể lớp 11A34 – Trung tâm GDNN-GDTX Quận 12</p>
   </div>
-
  <!-- Section 1 -->
 <section id="gioithieu">
   <div class="container">
@@ -310,7 +297,6 @@ section:last-of-type {
     </div>
   </div>
 </section>
-
 <!-- Section 2 -->
 <section class="alt" id="ynghia">
   <div class="container">
@@ -323,7 +309,6 @@ section:last-of-type {
     </div>
   </div>
 </section>
-
 <!-- Section 3 – Lịch sử ngày 20/10 -->
 <section id="lichsu">
   <div class="container">
@@ -336,7 +321,6 @@ section:last-of-type {
     </div>
   </div>
 </section>
-
 <!-- Section 4 – Hoạt động kỷ niệm -->
 <section class="alt" id="hoatdong">
   <div class="container">
@@ -353,11 +337,10 @@ section:last-of-type {
     </div>
   </div>
 </section>
-
 <!-- Section 5 – Câu chuyện phụ nữ tiêu biểu -->
 <section id="cauchuyen">
   <div class="container">
-    <div class="section-content fade-in" style="flex-direction: row-reverse;">
+   <div class="section-content fade-in">
       <div class="section-text">
         <h2>Câu chuyện phụ nữ tiêu biểu</h2>
         <p>Nhấn vào biểu tượng kính lúp hoặc ảnh để đọc câu chuyện chi tiết.</p>
@@ -378,19 +361,16 @@ section:last-of-type {
     </div>
   </div>
 </section>
-
 <!-- Modal câu chuyện -->
 <div id="storyModal" class="modal">
   <div class="modal-content center-modal">
     <!-- X tròn, toàn vùng bấm -->
     <div class="close"><span style="pointer-events:none;">&times;</span></div>
-
     <h2>Câu chuyện phụ nữ tiêu biểu</h2>
     <!-- Chú thích -->
     <p style="font-size:14px; color:#666; margin-top:-5px; margin-bottom:15px;">
       Nhấn vào biểu tượng kính lúp để đọc câu chuyện chi tiết
     </p>
-
     <p style="font-size:18px; line-height:1.6;">
       Chúng em muốn chia sẻ những câu chuyện nhỏ nhưng đầy cảm hứng: từ mẹ luôn hi sinh âm thầm, cô giáo tận tâm truyền đạt kiến thức, đến những bạn nữ trong lớp năng động, sáng tạo. Mỗi câu chuyện đều thể hiện lòng kiên cường, yêu thương và tinh thần vượt khó.
     </p>
@@ -408,8 +388,6 @@ section:last-of-type {
     </div>
   </div>
 </div>
-
-
 <!-- Modal full ảnh -->
 <div id="fullImgModal" class="modal">
   <div class="closeFull"><span style="pointer-events:none;">&times;</span></div>
@@ -432,7 +410,6 @@ section:last-of-type {
     ">➕</button>
   </div>
 </div>
-
 <style>
 .modal {
   display: none;
@@ -460,32 +437,25 @@ section:last-of-type {
 .close span, .closeFull span {
   pointer-events: none; /* click xuyên qua span */
 }
-
 .close:hover, .closeFull:hover { transform:scale(1.2); background:linear-gradient(45deg,#ff3d3d,#ff0000); }
 #fullImgModal .full-img { max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.7); transition: transform 0.2s ease; }
-
 </style>
-
 <script>
 // Modal câu chuyện
 const storyModal = document.getElementById("storyModal");
 const storyImg = document.getElementById("storyImg");
 const zoomBtn = document.getElementById("zoomBtn");
 const closeStory = document.querySelector("#storyModal .close");
-
 // Mở modal khi click ảnh hoặc kính lúp
 storyImg.onclick = zoomBtn.onclick = () => { storyModal.style.display = "flex"; }
-
 // Đóng modal khi click X (toàn vùng)
 closeStory.onclick = () => { storyModal.style.display = "none"; }
 // Stop event bubbling để click span × bên trong không ảnh hưởng
 closeStory.querySelector("span").style.pointerEvents = "none";
-
 // Click ngoài modal vẫn tắt modal
 storyModal.addEventListener("click", e => {
   if(e.target === storyModal) storyModal.style.display = "none";
 });
-
 // Full ảnh
 const modalImg = document.getElementById("modalImg");
 const fullZoomBtn = document.getElementById("fullZoomBtn");
@@ -494,7 +464,6 @@ const fullImage = document.getElementById("fullImage");
 const closeFull = document.querySelector("#fullImgModal .closeFull");
 let currentScale = 1;
 function updateScale(){ fullImage.style.transform = `scale(${currentScale})`; }
-
 // Mở full ảnh
 modalImg.onclick = fullZoomBtn.onclick = () => {
   currentScale = 1;
@@ -502,25 +471,20 @@ modalImg.onclick = fullZoomBtn.onclick = () => {
   fullImgModal.style.display = "flex";
   updateScale();
 }
-
 // Đóng full modal khi click X (toàn vùng)
 closeFull.onclick = () => { fullImgModal.style.display = "none"; }
 // Stop event bubbling để click span × bên trong không ảnh hưởng
 closeFull.querySelector("span").style.pointerEvents = "none";
-
 // Click ngoài full modal vẫn tắt
 fullImgModal.addEventListener("click", e => {
   if(e.target === fullImgModal) fullImgModal.style.display = "none";
 });
-
 // Zoom ± giữ liên tục
 let zoomInterval;
 const zoomIn = document.getElementById("zoomIn");
 const zoomOut = document.getElementById("zoomOut");
-
 // Ngăn click ± đóng modal
 [zoomIn, zoomOut].forEach(btn => btn.addEventListener("mousedown", e => e.stopPropagation()));
-
 function startZoomIn() {
   zoomInterval = setInterval(() => {
     currentScale += 0.05;
@@ -538,7 +502,6 @@ function startZoomOut() {
 function stopZoom() {
   clearInterval(zoomInterval);
 }
-
 // PC + Mobile đều nhận
 ["mousedown", "touchstart"].forEach(evt => {
   zoomIn.addEventListener(evt, e => { e.stopPropagation(); startZoomIn(); });
@@ -548,11 +511,7 @@ function stopZoom() {
   zoomIn.addEventListener(evt, stopZoom);
   zoomOut.addEventListener(evt, stopZoom);
 });
-
-
 </script>
-
-
 <!-- Section 6 – Phẩm chất của phụ nữ Việt Nam -->
 <section class="alt" id="phamchat">
   <div class="container">
@@ -570,7 +529,6 @@ function stopZoom() {
     </div>
   </div>
 </section>
-
 <!-- Section 7 – Tri ân từ 11A34 -->
 <section id="trian">
   <div class="container">
@@ -583,7 +541,6 @@ function stopZoom() {
     </div>
   </div>
 </section>
-
 <!-- Section 8 – Lời kết -->
 <section class="alt" id="ketluan">
   <div class="container">
@@ -597,12 +554,9 @@ function stopZoom() {
     </div>
   </div>
 </section>
-
-
   <footer>
     <p>© 2025 Lớp 11A34 – <a href="https://gdtxq12.hcm.edu.vn/" target="_blank">Trung tâm GDNN-GDTX Quận 12</a> | Thiết kế & thực hiện bởi <a href="https://www.facebook.com/khanhpc548" target="_blank" >Hoàng Quốc Khánh</a></p>
   </footer>
-
   <script>
     // Hiệu ứng xuất hiện khi cuộn
     const fadeEls = document.querySelectorAll('.fade-in');
