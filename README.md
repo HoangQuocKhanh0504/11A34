@@ -67,8 +67,8 @@ Trang web giới thiệu ý nghĩa ngày 20/10, các hoạt động kỷ niệm,
 
 ## 📷 Ảnh minh họa
 
-<img src="https://i.imgur.com/ygeOixC.jpg" width="400" alt="Tri ân 20/10">
-<img src="https://i.imgur.com/qbAUsnW.jpg" width="400" alt="Hoa yêu thương">
+<img src="duan.png" width="400" alt="Tri ân 20/10">
+<img src="duan2.png" width="400" alt="Hoa yêu thương">
 
 ---
 
