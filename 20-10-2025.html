@@ -8,20 +8,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* ======================= GLOBAL ======================= */
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  border-radius: 12px; /* bo tròn tất cả */
-}
+  border-radius: 12px; }
 body {
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(to bottom, #fff9fc, #fff);
   color: #333;
 }
-/* ======================= NAVBAR ======================= */
 nav {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 16px rgba(255, 105, 180, 0.15);
@@ -57,7 +54,6 @@ nav .navbar-brand { display: flex; align-items: center; }
   font-weight: 700;
   margin-left: 0.5rem;
 }
-/* ======================= HERO ======================= */
 .hero {
   height: 100vh;
   background: url('backgroud.png') center center/cover no-repeat;
@@ -118,7 +114,6 @@ nav .navbar-brand { display: flex; align-items: center; }
 }
 @keyframes zoomHero { from{transform:scale(1);} to{transform:scale(1.05);} }
 @keyframes shineLogo { 0%{filter:brightness(1);} 100%{filter:brightness(1.15);} }
-/* ======================= SECTION ======================= */
 section {
   padding: 8vw 4%;
   max-width: 1200px;
@@ -145,7 +140,6 @@ section {
   box-shadow: 0 12px 30px rgba(214,51,132,0.3);
 }
 .section-text { flex: 1; min-width: 280px; }
-/* ======================= TITLES & TEXT ======================= */
 h2 {
   color: #d63384;
   font-weight: 700;
@@ -170,7 +164,6 @@ p {
   line-height: 1.75;
   color: #444;
 }
-/* ======================= FOOTER ======================= */
 footer {
   background: linear-gradient(to right, #ffe0ec, #fff0f6);
   text-align: center;
@@ -181,14 +174,12 @@ footer {
   letter-spacing: 0.3px;
 }
 section:last-of-type { margin-bottom: 10px; }
-/* ======================= FADE ANIMATION ======================= */
 .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.9s ease-out; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 .fade-in.visible img { animation: floatIn 1.3s ease forwards; }
 .fade-in.visible .section-text { animation: textSlide 1.4s ease forwards; }
 @keyframes floatIn { 0%{opacity:0;transform:translateY(40px) scale(0.98);} 100%{opacity:1;transform:translateY(0) scale(1);} }
 @keyframes textSlide { 0%{opacity:0;transform:translateX(-40px);} 100%{opacity:1;transform:translateX(0);} }
-/* ======================= RESPONSIVE ======================= */
 @media (max-width: 992px) {
   .section-content { flex-direction: column; gap: 6vw; }
   .section-content img { width: 80%; }
@@ -208,40 +199,27 @@ section:last-of-type { margin-bottom: 10px; }
   .hero p { font-size: 1rem; }
   .section-content img { width: 90%; }
 }
-/* ======================= FLOATY IMAGES ======================= */
 @keyframes floaty { from{transform:translateY(0px);} to{transform:translateY(-10px);} }
-/* Custom scrollbar cho Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 12px; /* chiều ngang scrollbar */
-}
+  width: 12px; }
 ::-webkit-scrollbar-track {
-  background: #fdf5f8; /* nền thanh cuộn */
-  border-radius: 10px;
+  background: #fdf5f8;   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff6eb4, #ff3d91); /* màu gradient nút cuộn */
-  border-radius: 10px;
-  border: 3px solid #fdf5f8; /* khoảng cách giữa thanh và track */
-}
+  background: linear-gradient(180deg, #ff6eb4, #ff3d91);   border-radius: 10px;
+  border: 3px solid #fdf5f8; }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff3d91, #ff6eb4); /* đổi màu khi hover */
-}
-/* Firefox */
+  background: linear-gradient(180deg, #ff3d91, #ff6eb4); }
 * {
   scrollbar-width: thin;
   scrollbar-color: #ff3d91 #fdf5f8;
 }
-/* Ẩn scrollbar ngang */
 body {
-  overflow-x: hidden; /* ẩn cuộn ngang toàn trang */
-}
-/* Nếu muốn áp dụng cho 1 div cụ thể */
+  overflow-x: hidden; }
 .your-container {
   overflow-x: hidden;
-  overflow-y: auto; /* giữ cuộn dọc nếu cần */
-}
-        /* Hiệu ứng hoa rơi */
-        .flower-animation {
+  overflow-y: auto; }
+                .flower-animation {
             position: fixed;
             animation: fall 5s linear infinite;
             font-size: 1.5em;
@@ -289,19 +267,15 @@ body {
   </div>
 </nav>
 <style>
-/* Notification nhỏ gọn trong navbar */
 #navbar-notification {
   background-color: #ffcc00;
   color: #000;
   font-weight: bold;
-  font-size: 0.75rem; /* nhỏ gọn */
-  height: 28px;
+  font-size: 0.75rem;   height: 28px;
   line-height: 28px;
-  border-radius: 14px; /* bo tròn */
-  padding: 0 10px;
+  border-radius: 14px;   padding: 0 10px;
   overflow: hidden;
-  max-width: 350px;  /* vừa trong navbar */
-}
+  max-width: 350px;  }
 #scrolling-wrapper {
   display: inline-block;
   white-space: nowrap;
@@ -319,7 +293,6 @@ body {
   color: #000;
   text-decoration: underline;
 }
-/* Ép navbar luôn dính trên đầu dù có position:relative */
 .navbar.fixed-top {
   position: fixed !important;
   top: 0;
@@ -327,10 +300,8 @@ body {
   right: 0;
   z-index: 1000;
 }
-/* Chừa khoảng trống để nội dung bên dưới không bị che */
 body {
-  padding-top: 80px; /* chỉnh cao thấp tùy chiều cao navbar */
-}
+  padding-top: 80px; }
 </style>
 <!-- Hero -->
 <div class="hero" style="text-align:center; padding: 5vw 2%; position: relative;">
@@ -348,17 +319,13 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  background: #ff3d91; /* màu hồng rực rỡ */
-  border-radius: 50px;
+  background: #ff3d91;   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 6px 20px rgba(255, 61, 145, 0.5);
-  z-index: 10; /* đảm bảo nổi trên hero */
-  position: relative; /* để z-index có hiệu lực */
-}
+  z-index: 10;   position: relative; }
 .hero-btn:hover {
-  background: #ff6eb4; /* đổi màu khi hover */
-  transform: translateY(-3px);
+  background: #ff6eb4;   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 61, 145, 0.6);
 }
 </style>
@@ -537,11 +504,9 @@ body {
   display:flex; justify-content:center; align-items:center;
   cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,0.5);
   transition:0.2s;
-  user-select: none; /* tránh bị bôi đen chữ */
-}
+  user-select: none; }
 .close span, .closeFull span {
-  pointer-events: none; /* click xuyên qua span */
-}
+  pointer-events: none; }
 .close:hover, .closeFull:hover { transform:scale(1.2); background:linear-gradient(45deg,#ff3d3d,#ff0000); }
 #fullImgModal .full-img { max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.7); transition: transform 0.2s ease; }
 </style>
