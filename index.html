@@ -149,6 +149,89 @@
   </style>
 </head>
 <body>
+  <!-- Hiệu ứng rơi 20/10 -->
+<div class="fall-item">🌸</div>
+<div class="fall-item">💐</div>
+<div class="fall-item">🌹</div>
+<div class="fall-item">🥀</div>
+<div class="fall-item">🌷</div>
+<div class="fall-item">🌺</div>
+<div class="fall-item">💮</div>
+<div class="fall-item">🌻</div>
+<div class="fall-item">🌼</div>
+<div class="fall-item">🎁</div>
+<div class="fall-item">💝</div>
+<div class="fall-item">💌</div>
+<div class="fall-item">💞</div>
+<div class="fall-item">🎀</div>
+<div class="fall-item">✨</div>
+<div class="fall-item">👩‍🦰</div>
+<div class="fall-item">👩‍🎓</div>
+<div class="fall-item">👩‍🏫</div>
+<div class="fall-item">👩‍❤️‍👨</div>
+<div class="fall-item">👒</div>
+<div class="fall-item">👗</div>
+<div class="fall-item">💋</div>
+<div class="fall-item">🕯️</div>
+<div class="fall-item">🏵️</div>
+<div class="fall-item">🩷</div>
+<div class="fall-item">🌈</div>
+<div class="fall-item">🎉</div>
+<div class="fall-item">🇻🇳</div>
+<style>
+  .fall-item {
+    position: fixed;
+    top: -50px;
+    font-size: 1.8em;
+    opacity: 0.9;
+    pointer-events: none;
+    animation: fall 7s linear infinite;
+    z-index: 9999;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px) translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) translateX(var(--x-move)) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  /* Tạo vị trí và hiệu ứng ngẫu nhiên */
+  .fall-item:nth-child(n) {
+    left: calc(5% + (90% - 5%) * random);
+  }
+  .fall-item:nth-child(1)  { left: 5%;  --x-move: 10vw;  animation-delay: 0s; }
+  .fall-item:nth-child(2)  { left: 10%; --x-move: -5vw;  animation-delay: 1s; }
+  .fall-item:nth-child(3)  { left: 15%; --x-move: 8vw;   animation-delay: 2s; }
+  .fall-item:nth-child(4)  { left: 20%; --x-move: -10vw; animation-delay: 3s; }
+  .fall-item:nth-child(5)  { left: 25%; --x-move: 5vw;   animation-delay: 0.5s; }
+  .fall-item:nth-child(6)  { left: 30%; --x-move: -7vw;  animation-delay: 1.5s; }
+  .fall-item:nth-child(7)  { left: 35%; --x-move: 12vw;  animation-delay: 2.5s; }
+  .fall-item:nth-child(8)  { left: 40%; --x-move: -9vw;  animation-delay: 3.5s; }
+  .fall-item:nth-child(9)  { left: 45%; --x-move: 6vw;   animation-delay: 4s; }
+  .fall-item:nth-child(10) { left: 50%; --x-move: -6vw;  animation-delay: 5s; }
+  .fall-item:nth-child(11) { left: 55%; --x-move: 7vw;   animation-delay: 1s; }
+  .fall-item:nth-child(12) { left: 60%; --x-move: -8vw;  animation-delay: 2s; }
+  .fall-item:nth-child(13) { left: 65%; --x-move: 9vw;   animation-delay: 3s; }
+  .fall-item:nth-child(14) { left: 70%; --x-move: -7vw;  animation-delay: 4s; }
+  .fall-item:nth-child(15) { left: 75%; --x-move: 10vw;  animation-delay: 5s; }
+  .fall-item:nth-child(16) { left: 80%; --x-move: -5vw;  animation-delay: 2.5s; }
+  .fall-item:nth-child(17) { left: 85%; --x-move: 6vw;   animation-delay: 3.5s; }
+  .fall-item:nth-child(18) { left: 90%; --x-move: -8vw;  animation-delay: 4.5s; }
+  .fall-item:nth-child(19) { left: 95%; --x-move: 8vw;   animation-delay: 5.5s; }
+  .fall-item:nth-child(20) { left: 15%; --x-move: -9vw;  animation-delay: 1.5s; }
+  .fall-item:nth-child(21) { left: 35%; --x-move: 9vw;   animation-delay: 2.2s; }
+  .fall-item:nth-child(22) { left: 55%; --x-move: -6vw;  animation-delay: 3.1s; }
+  .fall-item:nth-child(23) { left: 75%; --x-move: 6vw;   animation-delay: 4.2s; }
+  .fall-item:nth-child(24) { left: 90%; --x-move: -5vw;  animation-delay: 5.3s; }
+  .fall-item:nth-child(25) { left: 10%; --x-move: 10vw;  animation-delay: 0.8s; }
+  .fall-item:nth-child(26) { left: 20%; --x-move: -10vw; animation-delay: 1.8s; }
+  .fall-item:nth-child(27) { left: 40%; --x-move: 12vw;  animation-delay: 2.8s; }
+  .fall-item:nth-child(28) { left: 60%; --x-move: -12vw; animation-delay: 3.8s; }
+  .fall-item:nth-child(29) { left: 80%; --x-move: 14vw;  animation-delay: 4.8s; }
+</style>
   <button class="toggle-dark" id="darkToggle" title="Chuyển chế độ">🌙</button>
 
   <h1>🌸 Dự án: Người Phụ Nữ Việt Nam Tôi Yêu – Lớp 11A34</h1>
