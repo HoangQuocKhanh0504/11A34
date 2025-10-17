@@ -7,68 +7,150 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-light: linear-gradient(to bottom, #fff9fc, #fff);
+      --text-light: #333;
+      --accent-light: #d63384;
+      --border-light: #ffd6e0;
+
+      --bg-dark: #1c1b1f;
+      --text-dark: #eee;
+      --accent-dark: #ff69b4;
+      --border-dark: #333;
+    }
+
     body {
       font-family: "Quicksand", sans-serif;
       line-height: 1.8;
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      background: linear-gradient(to bottom, #fff9fc, #fff);
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
     }
+
     h1, h2, h3 {
-      color: #d63384;
+      color: var(--accent-light);
+      transition: color 0.3s ease;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 10px;
     }
+
     hr {
       border: none;
-      border-top: 2px solid #ffd6e0;
+      border-top: 2px solid var(--border-light);
       margin: 20px 0;
+      transition: border-color 0.3s ease;
     }
+
     blockquote {
       border-left: 4px solid #f8a5c2;
       background: #fff0f6;
       padding: 10px 20px;
       font-style: italic;
       margin: 10px 0 30px;
+      transition: all 0.3s ease;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 10px 0;
     }
+
     th, td {
       border: 1px solid #ffcce0;
       padding: 8px 12px;
       text-align: left;
+      transition: all 0.3s ease;
     }
+
     th {
       background: #ffe6f0;
     }
+
     img {
       border-radius: 10px;
       margin: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+
     a {
       color: #c2185b;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
       color: #777;
     }
+
+    /* Dark Mode */
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body.dark h1, body.dark h2, body.dark h3 {
+      color: var(--accent-dark);
+    }
+
+    body.dark hr {
+      border-top-color: var(--border-dark);
+    }
+
+    body.dark blockquote {
+      background: #2a2a2f;
+      border-left-color: var(--accent-dark);
+    }
+
+    body.dark th, body.dark td {
+      border-color: #444;
+    }
+
+    body.dark th {
+      background: #333;
+    }
+
+    /* Toggle Button */
+    .toggle-dark {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ffe6f0;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      font-size: 1.3rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .toggle-dark:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    body.dark .toggle-dark {
+      background: #333;
+      color: #ffb6c1;
+    }
   </style>
 </head>
 <body>
+  <button class="toggle-dark" id="darkToggle" title="Chuyển chế độ">🌙</button>
+
   <h1>🌸 Dự án: Người Phụ Nữ Việt Nam Tôi Yêu – Lớp 11A34</h1>
 
   <blockquote>“Người phụ nữ Việt Nam – dịu dàng như hoa, mạnh mẽ như thép.”<br>— Tập thể lớp 11A34</blockquote>
@@ -142,5 +224,23 @@
     <p>© 2025 – Lớp <strong>11A34</strong></p>
     <p>Thiết kế & thực hiện bởi <a href="https://www.facebook.com/khanhpc548">Hoàng Quốc Khánh</a></p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    const body = document.body;
+
+    // Giữ trạng thái Dark Mode khi tải lại trang
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggle.textContent = "☀️";
+    }
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const isDark = body.classList.contains("dark");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>
