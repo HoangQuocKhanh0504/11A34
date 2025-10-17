@@ -12,13 +12,11 @@
       --text-light: #333;
       --accent-light: #d63384;
       --border-light: #ffd6e0;
-
       --bg-dark: #1c1b1f;
       --text-dark: #eee;
       --accent-dark: #ff69b4;
       --border-dark: #333;
     }
-
     body {
       font-family: "Quicksand", sans-serif;
       line-height: 1.8;
@@ -29,24 +27,20 @@
       color: var(--text-light);
       transition: all 0.3s ease;
     }
-
     h1, h2, h3 {
       color: var(--accent-light);
       transition: color 0.3s ease;
     }
-
     h1 {
       text-align: center;
       margin-bottom: 10px;
     }
-
     hr {
       border: none;
       border-top: 2px solid var(--border-light);
       margin: 20px 0;
       transition: border-color 0.3s ease;
     }
-
     blockquote {
       border-left: 4px solid #f8a5c2;
       background: #fff0f6;
@@ -55,73 +49,59 @@
       margin: 10px 0 30px;
       transition: all 0.3s ease;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 10px 0;
     }
-
     th, td {
       border: 1px solid #ffcce0;
       padding: 8px 12px;
       text-align: left;
       transition: all 0.3s ease;
     }
-
     th {
       background: #ffe6f0;
     }
-
     img {
       border-radius: 10px;
       margin: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
     a {
       color: #c2185b;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
       color: #777;
     }
-
     /* Dark Mode */
     body.dark {
       background: var(--bg-dark);
       color: var(--text-dark);
     }
-
     body.dark h1, body.dark h2, body.dark h3 {
       color: var(--accent-dark);
     }
-
     body.dark hr {
       border-top-color: var(--border-dark);
     }
-
     body.dark blockquote {
       background: #2a2a2f;
       border-left-color: var(--accent-dark);
     }
-
     body.dark th, body.dark td {
       border-color: #444;
     }
-
     body.dark th {
       background: #333;
     }
-
     /* Toggle Button */
     .toggle-dark {
       position: fixed;
@@ -137,15 +117,33 @@
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
     }
-
     .toggle-dark:hover {
       transform: rotate(10deg) scale(1.1);
     }
-
     body.dark .toggle-dark {
       background: #333;
       color: #ffb6c1;
     }
+    @keyframes floaty { from{transform:translateY(0px);} to{transform:translateY(-10px);} }
+::-webkit-scrollbar {
+  width: 12px; }
+::-webkit-scrollbar-track {
+  background: #fdf5f8;   border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6eb4, #ff3d91);   border-radius: 10px;
+  border: 3px solid #fdf5f8; }
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff3d91, #ff6eb4); }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff3d91 #fdf5f8;
+}
+body {
+  overflow-x: hidden; }
+.your-container {
+  overflow-x: hidden;
+  overflow-y: auto; }
   </style>
 </head>
 <body>
@@ -233,19 +231,13 @@
   .fall-item:nth-child(29) { left: 80%; --x-move: 14vw;  animation-delay: 4.8s; }
 </style>
   <button class="toggle-dark" id="darkToggle" title="Chuyển chế độ">🌙</button>
-
   <h1>🌸 Dự án: Người Phụ Nữ Việt Nam Tôi Yêu – Lớp 11A34</h1>
-
   <blockquote>“Người phụ nữ Việt Nam – dịu dàng như hoa, mạnh mẽ như thép.”<br>— Tập thể lớp 11A34</blockquote>
-
   <hr>
-
   <h2>💡 Giới thiệu</h2>
   <p>Đây là <strong>dự án web tôn vinh phụ nữ Việt Nam</strong> nhân dịp <strong>20/10</strong>, được thực hiện bởi <strong>tập thể lớp 11A34 – Trung tâm GDNN-GDTX Quận 12</strong>.<br>
   Trang web giới thiệu ý nghĩa ngày 20/10, các hoạt động kỷ niệm, phẩm chất của người phụ nữ Việt Nam, và những câu chuyện cảm động do chính học sinh biên soạn.</p>
-
   <hr>
-
   <h2>🖥️ Nội dung chính</h2>
   <ul>
     <li><strong>Phần giới thiệu chủ đề:</strong> Giải thích lý do chọn đề tài và mục tiêu hướng đến.</li>
@@ -257,9 +249,7 @@
     <li><strong>Tri ân & cảm xúc:</strong> Lời cảm ơn và chúc mừng từ tập thể lớp 11A34.</li>
     <li><strong>Lời kết:</strong> Khép lại bằng thông điệp yêu thương và hình ảnh tượng trưng cho hoa – người phụ nữ Việt Nam.</li>
   </ul>
-
   <hr>
-
   <h2>🎨 Giao diện & Kỹ thuật</h2>
   <ul>
     <li><strong>Ngôn ngữ:</strong> HTML, CSS, JavaScript</li>
@@ -275,9 +265,7 @@
     <li><strong>Thiết kế:</strong> Bo tròn toàn bộ góc, phối màu hồng pastel nhẹ nhàng.</li>
     <li><strong>Tối ưu cho:</strong> Cả máy tính và điện thoại (responsive).</li>
   </ul>
-
   <hr>
-
   <h2>🧑‍💻 Thành viên thực hiện</h2>
   <table>
     <tr><th>Vai trò</th><th>Họ tên</th></tr>
@@ -286,38 +274,30 @@
     <tr><td>Hình ảnh minh họa</td><td>Sưu tầm và thiết kế bởi nhóm dự án</td></tr>
     <tr><td>Cố vấn</td><td><strong>Giáo viên chủ nhiệm lớp 11A34</strong></td></tr>
   </table>
-
   <hr>
-
   <h2>📷 Ảnh minh họa</h2>
   <img src="duan.png" width="400" alt="Tri ân 20/10">
   <img src="duan2.png" width="400" alt="Hoa yêu thương">
-
   <hr>
-
   <h2>💬 Lời nhắn</h2>
   <blockquote>
     Xin gửi lời chúc tốt đẹp nhất đến tất cả <strong>những người phụ nữ Việt Nam</strong> –<br>
     những người đã và đang lan tỏa tình yêu, sự hi sinh và nghị lực phi thường.<br><br>
     🌷 Chúc mọi người <strong>mãi xinh đẹp, hạnh phúc và tỏa sáng!</strong>
   </blockquote>
-
   <footer>
     <p>📚 <a href="https://gdtxq12.hcm.edu.vn/" target="_blank">Trung tâm GDNN-GDTX Quận 12</a></p>
     <p>© 2025 – Lớp <strong>11A34</strong></p>
     <p>Thiết kế & thực hiện bởi <a href="https://www.facebook.com/khanhpc548" target="_blank">Hoàng Quốc Khánh</a></p>
   </footer>
-
   <script>
     const toggle = document.getElementById("darkToggle");
     const body = document.body;
-
     // Giữ trạng thái Dark Mode khi tải lại trang
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark");
       toggle.textContent = "☀️";
     }
-
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark");
       const isDark = body.classList.contains("dark");
