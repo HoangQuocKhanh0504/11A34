@@ -315,29 +315,34 @@ body {
       <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" 
            alt="Cờ Việt Nam" class="flag-icon ms-2">
     </a>
-    <!-- Notification nhỏ gọn -->
-    <div id="navbar-notification" class="d-none d-lg-flex align-items-center ms-auto">
-      <div id="scrolling-wrapper">
-        <span>
-          👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
-        </span>
-        <span>
-          👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
-        </span>
-      </div>
-    </div>
+<!-- Notification nhỏ gọn -->
+<div id="navbar-notification" class="d-none d-lg-flex align-items-center ms-auto">
+  <div id="scrolling-wrapper">
+    <span>
+      <img src="logo.png" alt="Logo" class="notif-logo">
+      👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
+    </span>
+    <span>
+      <img src="logo.png" alt="Logo" class="notif-logo">
+      👋 Chào mừng bạn đến với trang web của lớp 11A34! Hãy tận hưởng trải nghiệm nhé!
+    </span>
   </div>
+</div>
+</div>
 </nav>
 <style>
 #navbar-notification {
   background-color: #ffcc00;
   color: #000;
   font-weight: bold;
-  font-size: 0.75rem;   height: 28px;
+  font-size: 0.75rem;
+  height: 28px;
   line-height: 28px;
-  border-radius: 14px;   padding: 0 10px;
+  border-radius: 14px;
+  padding: 0 10px;
   overflow: hidden;
-  max-width: 350px;  }
+  max-width: 350px;
+}
 #scrolling-wrapper {
   display: inline-block;
   white-space: nowrap;
@@ -346,6 +351,15 @@ body {
 }
 #scrolling-wrapper span {
   padding-right: 50px;
+}
+/* Logo nhỏ nằm cạnh chữ */
+.notif-logo {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+  object-fit: cover;
 }
 @keyframes scroll-infinite {
   0% { transform: translateX(0); }
@@ -363,7 +377,8 @@ body {
   z-index: 1000;
 }
 body {
-  padding-top: 80px; }
+  padding-top: 80px;
+}
 </style>
 <!-- Hero -->
 <div class="hero" style="text-align:center; padding: 5vw 2%; position: relative;">
@@ -453,20 +468,45 @@ body {
       </div>
       <div style="display:inline-block; position: relative; cursor: pointer;">
         <img id="storyImg" src="vothisau.png" alt="Câu chuyện phụ nữ" style="width:500px; max-width:90%; border-radius:10px;">
-        <!-- Kính lúp -->
-       <span id="zoomBtn" style="
+<span id="zoomBtn" style="
   position: absolute; bottom: 15px; right: 15px;
-  background: linear-gradient(135deg, #ff7b7b, #ff3d3d, #ff1a1a);
-  color: #fff; padding: 14px; 
+  background: linear-gradient(135deg, #ff4b4b, #ff1a1a);
+  color: #fff; padding: 10px;
   border-radius: 50%;
-  font-size: 26px; cursor: pointer;
+  cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 999;
 ">
-🔍
+  <img src="logo.png" alt="Logo" style="
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  ">
 </span>
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 61, 61, 0.6); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 61, 61, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 61, 61, 0); }
+}
+/* Hover toàn nút */
+#zoomBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(255, 50, 50, 0.9);
+}
+/* Hover logo bên trong */
+#zoomBtn:hover img {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+</style>
 <style>
 #zoomBtn:hover {
   transform: scale(1.2);
@@ -485,7 +525,7 @@ body {
 <div id="storyModal" class="modal">
   <div class="modal-content center-modal">
     <!-- X tròn, toàn vùng bấm -->
-    <div class="close"><span >&times;</span></div>
+    <div class="close"><span style="pointer-events:none;">&times;</span></div>
     <h2>Câu chuyện phụ nữ tiêu biểu</h2>
     <!-- Chú thích -->
     <p style="font-size:14px; color:#666; margin-top:-5px; margin-bottom:15px;">
@@ -497,18 +537,33 @@ body {
     <div style="position: relative; display:inline-block;">
       <img id="modalImg" src="vothisau.png" alt="Câu chuyện phụ nữ" style="width:100%; max-width:500px; margin-top:10px; border-radius:10px; cursor:pointer;">
 <span id="fullZoomBtn" style="
-  position: absolute; bottom: 10px; right: 10px;
-  background: linear-gradient(135deg, #ff7b7b, #ff3d3d, #ff1a1a);
-  color: #fff; padding: 12px; 
+  position: absolute; bottom: 70px; right: 15px;
+  background: linear-gradient(135deg, #ff4b4b, #ff1a1a);
+  color: #fff; padding: 10px;
   border-radius: 50%;
-  font-size: 24px; cursor: pointer;
+  cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
+  transition: all 0.3s ease;
   animation: pulse 2s infinite;
+  overflow: hidden;
+  border: 2px solid #fff;
+  z-index: 999;
 ">
-🔍
+  <img src="logo.png" alt="Logo" style="
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  ">
 </span>
+<style>
+#fullZoomBtn:hover img {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+</style>
 <style>
 #fullZoomBtn:hover {
   transform: scale(1.2);
@@ -558,19 +613,30 @@ body {
   text-align:center; box-shadow:0 0 25px rgba(0,0,0,0.5);
 }
 .close, .closeFull {
-  position:absolute; top:12px; right:12px;
-  width:50px; height:50px; 
-  background:linear-gradient(45deg,#ff7b7b,#ff3d3d);
-  color:#fff; border-radius:50%; 
-  font-size:40px; font-weight:bold;
-  display:flex; justify-content:center; align-items:center;
-  cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,0.5);
-  transition:0.2s;
-  user-select: none; }
+  position: absolute; top: 12px; right: 12px;
+  width: 50px; height: 50px;
+  background: linear-gradient(45deg,#ff7b7b,#ff3d3d);
+  color: #fff; 
+  border-radius: 50%;
+  font-size: 40px; font-weight: bold;
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  user-select: none;
+}
 .close span, .closeFull span {
-  pointer-events: none; }
-.close:hover, .closeFull:hover { transform:scale(1.2); background:linear-gradient(45deg,#ff3d3d,#ff0000); }
-#fullImgModal .full-img { max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 0 25px rgba(0,0,0,0.7); transition: transform 0.2s ease; }
+  /* pointer-events: none;  <-- BỎ ĐI */
+  transition: transform 0.3s ease;
+}
+.close:hover, .closeFull:hover { 
+  transform: scale(1.25);
+  background: linear-gradient(45deg,#ff3d3d,#ff0000);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+.close:hover span, .closeFull:hover span {
+  transform: rotate(20deg);
+}
 </style>
 <script>
 // Modal câu chuyện
@@ -686,9 +752,30 @@ function stopZoom() {
     </div>
   </div>
 </section>
-  <footer>
-    <p>© 2025 Lớp 11A34 – <a href="https://gdtxq12.hcm.edu.vn/" target="_blank">Trung tâm GDNN-GDTX Quận 12</a> | Thiết kế & thực hiện bởi <a href="https://www.facebook.com/khanhpc548" target="_blank" >Hoàng Quốc Khánh</a></p>
-  </footer>
+<footer>
+  <img src="logo.png" alt="Logo" style="height:24px; vertical-align:middle;">
+  <p>
+    © <span id="currentYear"></span> Lớp 11A34 – 
+    <a href="https://gdtxq12.hcm.edu.vn/" target="_blank">Trung tâm GDNN-GDTX Quận 12</a> | 
+    Thiết kế & thực hiện bởi 
+    <a href="https://www.facebook.com/khanhpc548" target="_blank">Hoàng Quốc Khánh</a> |
+    Giờ hiện tại: <span id="currentTime"></span>
+  </p>
+</footer>
+<script>
+  // Cập nhật năm
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  // Cập nhật giờ liên tục
+  function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2,'0');
+    const minutes = now.getMinutes().toString().padStart(2,'0');
+    const seconds = now.getSeconds().toString().padStart(2,'0');
+    document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  setInterval(updateTime, 1000);
+  updateTime(); // gọi ngay khi load
+</script>
   <script>
 const fadeEls = document.querySelectorAll('.fade-in');
 window.addEventListener('scroll', () => {
